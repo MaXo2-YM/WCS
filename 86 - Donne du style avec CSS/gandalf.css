@@ -1,0 +1,68 @@
+.fellow
+{
+	display: inline-block;
+	width: 500px;
+	height: 572px;
+	font-family: sans-serif;
+	position: relative;
+}
+
+.fellow img
+{
+	filter: opacity(40%);
+	transition:all 0.8s;
+	position: absolute;
+	z-index: 0;
+
+}
+
+.fellow:hover img
+{
+	filter: opacity(100%);
+	position: absolute;
+}
+
+.fellow .reward
+{
+	position: relative;
+	width: 60%;
+	height: auto;
+	background: rgba(255,255,255,0.7);
+	margin: auto;
+	margin-top: 30px;
+	padding: 20px 50px;
+	border-radius: 20px;
+	font-size: 30pt;
+	z-index: 1;
+	text-align: center;
+}
+
+.fellow strong
+{
+	font-weight: normal;
+	color: orange;
+}
+
+.fellow:hover .reward
+{
+	display: none;
+	margin: 0;
+
+}
+.fellow .name
+{
+	font-size: 70pt;
+	z-index: 1;
+	text-align: center;
+	color: white;
+	position: relative;
+	margin-top: 30%;
+}
+
+.fellow:hover .name
+{
+	position: absolute;
+	font-size: 40pt;
+	bottom: 5%;
+	width: 500px;
+}

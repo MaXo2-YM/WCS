@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script>
+			function patates()
+			{
+				var reponse = prompt("Hey mon ami ! Tu aimes ça les patates ?");
+				var regPos = new RegExp("^oui|yes$", "i");
+				var regNeg = new RegExp("^non?$", "i");
+
+				if(reponse.search(regPos) === 0)
+				{
+					var lesPatates = "";
+					for(var i = 0; i < 7; i++)
+					{
+						lesPatates += "#";
+						console.log(lesPatates);
+					}
+				}
+				else if(reponse.search(regNeg) === 0)
+				{
+					alert("Oh :(");
+				}
+				else
+				{
+					alert("Je vous sens comme tiraillé");
+				}
+			}
+		</script>
+	</head>
+	<body onLoad="patates();">
+	</body>
+</html>

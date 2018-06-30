@@ -1,0 +1,27 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge de Patates</title>
+</head>
+
+<body>
+
+    <script>
+        const reponse = prompt("Hey mon ami ! Tu aimes ça les patates ?");
+        let hastag = "";
+        if (reponse === "oui") {
+            for (let i = 0; i < 7; i++) {
+                console.log(hastag += '#');
+            }
+        } else if(reponse === "non") {
+            alert("Bouh");
+        } else {
+            alert("Je vous sens tiraillé");
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Variables
+	nombreSaisi
+	compteur
+
+DEBUT
+	Lire nombreSaisi
+	compteur <- 0
+	Répéter
+		Afficher "Bienvenue à la wild"
+	Tant Que compteur < nombreSaisi
+FIN
