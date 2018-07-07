@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Organisation du temps de travail pour les quêtes à la Wild Code School</title>
+	<script>
+		function calcMaxTpsQuete(nbGroupes)
+		{
+			let heuresDispoSemaine = document.getElementById('heuresDispoSemaine').value
+			let nbQuetes = document.getElementById('nbQuetes').value;
+			return (heuresDispoSemaine / (nbQuetes / nbGroupes));
+		}
+
+		function calcTpsQuetesTot(nbGroupes)
+		{
+			let nbQuetes = document.getElementById('nbQuetes').value;
+			let moyQuetes = document.getElementById('moyQuetes').value;
+			afficher("Un individu seul effectuera les quêtes en " + nbQuetes + " x " + moyQuetes + " = " + nbQuetes * moyQuetes + " heures");
+			afficher("le groupe entier effectuera les quêtes en " + nbQuetes + " x " + moyQuetes + " x 11 = " + nbQuetes * moyQuetes * 11 + " heures de travail");
+		}
+
+		function afficher(str)
+		{
+			let noeud = document.createElement("p");
+			noeud.textContent = str;
+			document.body.appendChild(noeud);
+		}
+
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><label for="heuresDispoSemaine">Heures disponibles dans la semaine :</label></td>
+			<td><input type="text" name="heuresDispoSemaine" id="heuresDispoSemaine" value="5" size="2" oninput="calcTpsQuetesTot(11);"/>h</td>
+		</tr>
+		<tr>
+			<td><label for="nbQuetes">Nombres de quêtes :</label></td>
+			<td><input type="text" name="nbQuetes" id="nbQuetes" value="6" size="2" /></td>
+		<tr>
+			<td><label for="moyQuetes">Durée de réalisation moyene d'une quête :</label></td>
+			<td><input type="text" name="moyQuetes" id="moyQuetes" value="2" size="2" />h</td>
+		</tr>
+		<tr>
+			<td><label for="coefRetardIndividuel">Retard individuel par jour pour un travail en groupe :</label></td>
+			<td><input type="text" name="coefRetardIndividuel" id="coefRetardIndividuel" value="2" size="2" />h</td>
+		</tr>
+		<tr>
+			<td><label for="coefAvanceBinome">Coefficient d'améliorationpour travail en binôme :</label></td>
+			<td><input type="text" name="coefAvanceBinome" id="coefAvanceBinome" value="1.4" size="2" /></td>
+		</tr>
+		<tr>
+			<td><label for="coefAvanceTrinome">Coefficient d'améliorationpour travail en Trinôme :</label></td>
+			<td><input type="text" name="coefAvanceTrinome" id="coefAvanceTrinome" value="1.2" size="2" /></td>
+		</tr>
+		<tr>
+			<td><label for="coefAvanceQuadrinome">Coefficient d'améliorationpour travail en Quadrinôme :</label></td>
+			<td><input type="text" name="coefAvanceQuadrinome" id="coefAvanceQuadrinome" value="1.4" size="2" /></td>
+		</tr>
+	</table>
+</body>
+</html>

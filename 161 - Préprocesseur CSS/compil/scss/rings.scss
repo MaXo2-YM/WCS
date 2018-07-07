@@ -1,0 +1,36 @@
+@mixin anneau($taille, $couleur)
+{
+	border-radius: 50%;
+	width: $taille;
+	height: $taille;
+	border: $taille/12 solid $couleur;
+	background-color: transparent;
+	box-shadow: $taille/30 $taille/30 $taille/40 darken($couleur, 15), $taille/30 $taille/30 $taille/40 darken($couleur, 15) inset;
+}
+
+.anneauJaune
+{
+	@include anneau(150px, yellow);
+}
+
+.anneauOrange
+{
+	@include anneau(50px, orange);
+	display: inline-block;
+}
+
+.anneauxGris
+{
+	text-align: center;
+}
+
+@for $i from 1 through 6
+{
+	.anneauGris-#{$i}
+	{
+		@include anneau(20px + 20px * $i, darkgrey);
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: -10px - 10px * $i;
+	}
+}
