@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Quel temps fait-il ?</title>
+		<script>
+			function getCity()
+			{
+				return document.getElementById('city').value;
+			}
+
+			function display(city, temp, icon)
+			{
+				document.getElementById("weather").innerHTML = "A " + city + ", il fait actuellement " + temp + "°C <img src='https://openweathermap.org/img/w/" + icon + ".png' />";
+			}
+
+			function getWeather(city)
+			{
+				fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + ",fr&units=metric&lang=fr&APPID=bbba221f2757b36451ff25b848fc9e36")
+				.then(function(response)
+				{
+					return response.json();
+				}).then(function(myJson)
+				{
+					display(city, myJson.main.temp, myJson.weather[0].icon);
+				});
+			}
+			function weather()
+			{
+				let city = getCity();
+				getWeather(city);
+			}
+		</script>
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="Ville en France" id="city" />
+			<input type="button" value="Quel temps y fait-il ?" onClick="weather();" />
+			<p id="weather"></p>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "WCS116",
+  "version": "1.0.0",
+  "description": "WCS Quête 116",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yann M.",
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.3.1"
+  }
+}
